@@ -1,0 +1,1 @@
+## version-reader for node apps in go test

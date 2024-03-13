@@ -1,4 +1,4 @@
-name: "package.json version reader"
+name: "go package reader"
 description: "outputs the package.json version"
 
 inputs:
