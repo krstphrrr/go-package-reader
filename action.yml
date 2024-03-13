@@ -1,0 +1,24 @@
+name: "package.json version reader"
+description: "outputs the package.json version"
+
+inputs:
+  path:
+    description: "path of package.json"
+    default: "./"
+
+outputs:
+  version:
+    description: "version of package"
+
+# runs:
+#   using: "node20"
+#   main: "dist/index.js"
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.message }}
+
+branding:
+  icon: 'activity'
+  color: 'green'
