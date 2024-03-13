@@ -17,7 +17,7 @@ runs:
   using: docker
   image: Dockerfile
   args:
-    - ${{ inputs.message }}
+    - ${{ inputs.path }}
 
 branding:
   icon: 'activity'

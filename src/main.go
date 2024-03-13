@@ -12,5 +12,5 @@ func main() {
 
 	result := GetPackageVersion(path)
 
-	fmt.Printf("set output: version: %s\n", result)
+	fmt.Printf("%s\n", result)
 }
