@@ -10,4 +10,4 @@ COPY ./src ./
 RUN go build -o /bin/app
 # CMD ["tail", "/dev/null", "-f"]
 # ENTRYPOINT [ "app" ]
-ENTRYPOINT [ "entrypoint.sh" ]
+ENTRYPOINT [ "/app/entrypoint.sh" ]
