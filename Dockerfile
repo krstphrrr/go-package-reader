@@ -10,4 +10,4 @@ RUN chmod +x /app/entrypoint.sh
 RUN go build -o /bin/app
 # CMD ["tail", "/dev/null", "-f"]
 # ENTRYPOINT [ "app" ]
-ENTRYPOINT [ "/bin/sh", "./entrypoint.sh" ]
+ENTRYPOINT [ "/bin/sh", "/app/entrypoint.sh" ]
