@@ -7,10 +7,6 @@ import (
 
 func main() {
 	path := os.Args[1]
-
-	fmt.Printf("Load package.json at %s\n", path)
-
-	result := GetPackageVersion(path)
-
-	fmt.Printf("%s\n", result)
+	// result := GetPackageVersion(path)
+	fmt.Println(GetPackageVersion(path))
 }
