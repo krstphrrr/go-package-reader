@@ -5,9 +5,9 @@ WORKDIR /app
 COPY ./entrypoint.sh ./
 COPY ./go.mod ./
 COPY ./src ./
-
+RUN chmod +x /app/entrypoint.sh
 
 RUN go build -o /bin/app
 # CMD ["tail", "/dev/null", "-f"]
 # ENTRYPOINT [ "app" ]
-ENTRYPOINT [ "/app/entrypoint.sh" ]
+ENTRYPOINT [ "entrypoint.sh" ]
