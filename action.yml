@@ -16,8 +16,10 @@ outputs:
 runs:
   using: docker
   image: Dockerfile
-  args:
-    - ${{ inputs.path }}
+  # args:
+  #   - ${{ inputs.path }}
+  env: 
+    ACTION_INPUT: ${{ inputs.path }}
 
 branding:
   icon: 'activity'
