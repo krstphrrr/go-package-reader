@@ -20,6 +20,7 @@ runs:
   #   - ${{ inputs.path }}
   env: 
     ACTION_INPUT: ${{ inputs.path }}
+  entrypoint: "entrypoint.sh"
 
 branding:
   icon: 'activity'
