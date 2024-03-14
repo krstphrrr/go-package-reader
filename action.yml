@@ -16,10 +16,10 @@ outputs:
 runs:
   using: docker
   image: Dockerfile
-  # args:
-  #   - ${{ inputs.path }}
-  env: 
-    ACTION_INPUT: ${{ inputs.path }}
+  args:
+    - ${{ inputs.path }}
+  # env: 
+  #   ACTION_INPUT: ${{ inputs.path }}
   # entrypoint: "entrypoint.sh"
 
 branding:

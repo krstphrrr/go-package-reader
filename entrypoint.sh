@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
 # Run your Go program and set GITHUB_OUTPUT
-program_input=$(app $ACTIONS_INPUT)
+program_input=$(app $1)
 
 #echo "$program_input"
 # Set the output variable
