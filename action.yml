@@ -10,17 +10,11 @@ outputs:
   version:
     description: "version of package"
 
-# runs:
-#   using: "node20"
-#   main: "dist/index.js"
 runs:
   using: docker
   image: Dockerfile
   args:
     - ${{ inputs.path }}
-  # env: 
-  #   ACTION_INPUT: ${{ inputs.path }}
-  # entrypoint: "entrypoint.sh"
 
 branding:
   icon: 'activity'

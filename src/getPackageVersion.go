@@ -2,8 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	// "fmt"
-	// "io/ioutil"
 	"os"
 	"path/filepath"
 )
@@ -12,7 +10,7 @@ import (
 func FindPackageJSON(path string) string {
 	content, err := os.ReadFile(filepath.Join(path, "package.json"))
 	if err != nil {
-		panic(err) // Handle error appropriately
+		panic(err)
 	}
 	return string(content)
 }
@@ -22,11 +20,11 @@ func GetPackageVersion(path string) string {
 	packageJSON := FindPackageJSON(path)
 	var data map[string]interface{}
 	if err := json.Unmarshal([]byte(packageJSON), &data); err != nil {
-		panic(err) // Handle error appropriately
+		panic(err) 
 	}
 	version, ok := data["version"].(string)
 	if !ok {
-		panic("Version not found in package.json") // Handle error appropriately
+		panic("Version not found in package.json") 
 	}
 	return version
 }

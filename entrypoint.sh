@@ -1,8 +1,7 @@
 #!/bin/sh -l
 
-# Run your Go program and set GITHUB_OUTPUT
+# supplying the args from the actions.yml 
 program_input=$(app $1)
 
-#echo "$program_input"
 # Set the output variable
 echo "version=$program_input" >>"$GITHUB_OUTPUT"
