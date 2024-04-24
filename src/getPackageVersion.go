@@ -4,15 +4,44 @@ import (
 	"encoding/json"
 	"os"
 	"path/filepath"
+	"fmt"
+	"log"
 )
 
 // FindPackageJSON finds package.json with path.
 func FindPackageJSON(path string) string {
+	fmt.Println("working directory: ",printWD())
+
+	fmt.Println("files in working supplied dir (not wd): ", listDir(path))
+
 	content, err := os.ReadFile(filepath.Join(path, "package.json"))
 	if err != nil {
 		panic(err)
 	}
 	return string(content)
+}
+
+func listDir(path string) []string {
+	var files []string
+
+	entries, err := os.ReadDir(path)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	for _, e := range entries {
+		fmt.Println(e.Name())
+		files = append(files, e.Name())
+	}
+	return files
+}
+
+func printWD() string{
+	mydir, err := os.Getwd()
+	if err != nil { 
+		fmt.Println(err) 
+	} 
+	return mydir 
 }
 
 // GetPackageVersion gets the version field within package.json.
